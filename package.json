@@ -1,0 +1,23 @@
+{
+  "name": "browser-tools",
+  "version": "1.0.0",
+  "description": "Minimal browser automation toolkit for web scraping and site exploration",
+  "type": "module",
+  "scripts": {
+    "install-deps": "npm install"
+  },
+  "dependencies": {
+    "puppeteer-core": "^21.0.0"
+  },
+  "bin": {
+    "browser-tools-start": "./scripts/start.js",
+    "browser-tools-nav": "./scripts/nav.js",
+    "browser-tools-eval": "./scripts/eval.js",
+    "browser-tools-screenshot": "./scripts/screenshot.js",
+    "browser-tools-pick": "./scripts/pick.js",
+    "browser-tools-cookies": "./scripts/cookies.js"
+  },
+  "keywords": ["browser", "automation", "scraping", "puppeteer", "chrome"],
+  "author": "Browser Tools",
+  "license": "MIT"
+}
