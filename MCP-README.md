@@ -1,10 +1,10 @@
 # Browser Tools MCP Server
 
-This is an MCP (Model Context Protocol) server that provides browser automation capabilities without requiring API keys. It exposes the same functionality as the browser-tools CLI commands through the MCP protocol.
+This is a production-ready MCP (Model Context Protocol) server that provides browser automation capabilities without requiring API keys. It exposes the same functionality as the browser-tools CLI commands through the MCP protocol, optimized for AI agent workflows.
 
 ## Features
 
-The MCP server provides six browser automation tools:
+The MCP server provides six browser automation tools with comprehensive documentation and error handling:
 
 1. **browser_start** - Start Chrome with remote debugging
 2. **browser_navigate** - Navigate to URLs
@@ -12,6 +12,18 @@ The MCP server provides six browser automation tools:
 4. **browser_screenshot** - Capture screenshots
 5. **browser_pick** - Interactive element picker
 6. **browser_cookies** - Extract cookies
+
+### Optimizations
+
+This MCP server follows best practices for AI agent integration:
+
+- **Comprehensive Tool Descriptions**: Each tool includes USE WHEN, PARAMETERS, BEHAVIOR, EXAMPLES, and ERROR HANDLING sections
+- **Multiple Response Formats**: All tools support both markdown (human-readable) and JSON (structured) output formats
+- **Character Limits**: Responses are automatically truncated at 25,000 characters to respect context limits
+- **Tool Annotations**: Proper hints for read-only, destructive, idempotent, and open-world operations
+- **Actionable Error Messages**: Errors guide agents on next steps with specific suggestions
+- **Input Validation**: Schema-based validation with patterns and constraints
+- **Agent-Centric Design**: Tools designed for workflows, not just API endpoints
 
 ## Installation
 
@@ -224,6 +236,55 @@ This MCP server provides the same functionality as the CLI tools but through the
 - **Native Integration**: Works seamlessly with Claude Desktop and other MCP clients
 - **Same Capabilities**: All functionality of CLI tools available through MCP
 - **Stateful Sessions**: Browser stays open between tool calls for efficient workflows
+
+## Testing and Evaluation
+
+This repository includes an evaluation framework to test the MCP server's effectiveness.
+
+### Running Evaluations
+
+The evaluation script tests whether AI agents can effectively use the MCP server to complete realistic tasks.
+
+**Prerequisites:**
+```bash
+pip install anthropic mcp
+```
+
+**Run evaluation:**
+```bash
+python evaluation.py -t stdio -c node -a mcp-server.js evaluation.xml
+```
+
+**With output file:**
+```bash
+python evaluation.py -t stdio -c node -a mcp-server.js evaluation.xml -o report.md
+```
+
+### Evaluation Questions
+
+The `evaluation.xml` file contains 10 test questions that verify:
+- Browser starting and initialization
+- Page navigation
+- JavaScript execution
+- Data extraction workflows
+- Multi-step operations
+
+### Creating Custom Evaluations
+
+To create your own evaluation questions:
+
+1. Write complex, realistic questions that require multiple tool calls
+2. Ensure questions are read-only (non-destructive)
+3. Provide verifiable answers
+4. Save in XML format with `<qa_pair>` elements
+
+Example:
+```xml
+<qa_pair>
+  <question>Start the browser, navigate to https://example.com, and extract the page title. What is it?</question>
+  <answer>Example Domain</answer>
+</qa_pair>
+```
 
 ## Troubleshooting
 
