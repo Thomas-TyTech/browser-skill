@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaluation>
+  <!--
+    These evaluation questions test the browser MCP server's ability to:
+    1. Start browser and navigate to pages
+    2. Execute JavaScript to extract data
+    3. Handle multiple operations in sequence
+    4. Work with real web pages
+
+    NOTE: These questions require live internet access and may produce different
+    results over time as websites change. For stable testing, use local HTML files
+    or archived pages.
+  -->
+
+  <qa_pair>
+    <question>Start the browser, navigate to https://example.com, and extract the page title using JavaScript. What is the title?</question>
+    <answer>Example Domain</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Start a fresh browser, go to https://www.wikipedia.org/, and use JavaScript to count how many language links are displayed in the main portal page (look for elements with class 'central-featured-lang'). How many are there?</question>
+    <answer>10</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Launch the browser, navigate to https://news.ycombinator.com, and extract the text content of the first comment on the front page. Use JavaScript to find elements with class 'athing' and get its ID. What is the ID of the first story item?</question>
+    <answer>varies</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Start browser, go to https://github.com/, and count the total number of navigation links in the header (nav element). How many links are in the main navigation?</question>
+    <answer>varies</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Open https://example.com in the browser and use JavaScript to get the length of document.body.innerText. How many characters of text are in the body?</question>
+    <answer>varies</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Navigate to https://www.iana.org/domains/reserved and use JavaScript to count how many times the word "domain" appears in the page text (case insensitive). What is the count?</question>
+    <answer>varies</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Start browser, visit https://example.com, then navigate to https://example.org. Use JavaScript to get document.domain. What domain are you currently on?</question>
+    <answer>example.org</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Launch browser and go to https://httpbin.org/html. Use JavaScript to count the number of paragraph (p) elements on the page. How many are there?</question>
+    <answer>2</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Navigate to https://example.com and use JavaScript to check if the page has a meta description tag. Execute: document.querySelector('meta[name="description"]') ? 'yes' : 'no'. What is the result?</question>
+    <answer>no</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Start the browser, go to https://www.w3.org/, and use JavaScript to find all anchor tags and extract their href attributes, then count how many start with 'https://www.w3.org/'. What is the count?</question>
+    <answer>varies</answer>
+  </qa_pair>
+</evaluation>

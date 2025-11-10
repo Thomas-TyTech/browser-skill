@@ -7,7 +7,8 @@
     "install-deps": "npm install"
   },
   "dependencies": {
-    "puppeteer-core": "^21.0.0"
+    "puppeteer-core": "^21.0.0",
+    "@modelcontextprotocol/sdk": "^1.0.4"
   },
   "bin": {
     "browser-tools-start": "./scripts/start.js",
@@ -15,7 +16,8 @@
     "browser-tools-eval": "./scripts/eval.js",
     "browser-tools-screenshot": "./scripts/screenshot.js",
     "browser-tools-pick": "./scripts/pick.js",
-    "browser-tools-cookies": "./scripts/cookies.js"
+    "browser-tools-cookies": "./scripts/cookies.js",
+    "browser-tools-mcp": "./mcp-server.js"
   },
   "keywords": ["browser", "automation", "scraping", "puppeteer", "chrome"],
   "author": "Browser Tools",
